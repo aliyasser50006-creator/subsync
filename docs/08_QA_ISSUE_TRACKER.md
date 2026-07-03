@@ -1,0 +1,17 @@
+# SubSync AI — QA Lead Comprehensive Issue Tracker & Bug Matrix
+
+**Document Classification:** Official Engineering Specification (Volume 8 of 13)  
+**Author:** Principal QA Lead Engineer  
+**Version:** 4.0.0-ENTERPRISE  
+
+---
+
+## 1. Defect & Vulnerability Matrix
+
+| Bug ID | Title & Affected Area | Root Cause Analysis | Steps to Reproduce | Expected Behavior | Actual Behavior | Severity | Priority | Suggested Remediation | Effort |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **BUG-01** | **Video Player**<br>Seek Failure on Embedded Iframe Media | In `VideoDetailPage.tsx` (`handleSeekTo`), seeking attempts to query DOM directly via `document.getElementsByTagName('video')[0]`. When `ReactPlayer` renders an iframe video (YouTube/Vimeo), no `<video>` element exists in DOM. | 1. Open `/library/[id]` for YouTube video.<br>2. Click any subtitle line in `SubtitlePanel`. | Video player jumps to selected timestamp. | Nothing happens; DOM query fails silently. | **High** | **P1** | Pass an imperative React ref (`ReactPlayer.seekTo(seconds)`) up to parent or context to control seek behavior. | 2 Hours |
+| **BUG-02** | **Authentication**<br>Silent Null Session on Registration | In `/register/page.tsx`, calling `signUp()` redirects immediately to `/dashboard`. If Supabase project requires email verification, `signUp` returns null session without error, causing `ProtectedRoute` to immediately bounce user back to `/login`. | 1. Enable email verification in Supabase Auth.<br>2. Register new account on `/register`. | Inform user to check email confirmation inbox. | User is bounced back to `/login` with no explanation. | **Medium** | **P2** | Check if `data.session === null` after `signUp()`. If null, show verification alert box instead of routing to `/dashboard`. | 1 Hour |
+| **BUG-03** | **Performance**<br>Main Thread Freeze on Massive SRT Files | Client-side conversion (`srtToVtt` in `subtitle-converter.ts`) runs synchronously on UI thread. For massive multi-language SRT bundles (>5MB), string regex replacement blocks UI thread for 200-500ms. | 1. Drag and drop a 10MB SRT file into `/dashboard`. | Smooth progress bar update during parsing. | Browser UI thread freezes briefly during conversion. | **Medium** | **P2** | Offload `readSubtitleFileAsText` and `srtToVtt` execution to a dedicated browser Web Worker (`subtitle-worker.js`). | 4 Hours |
+| **BUG-04** | **API / Storage**<br>Unencoded Subtitle Path Resolution | In `VideoDetailPage.tsx`, resolving relative storage paths (`/api/subtitles/content?path=${data.subtitle_file}`) uses basic `encodeURIComponent`. If paths contain special symbols or subdirectories, resolution can fail on strict proxies. | 1. Upload SRT file named `My & Video + Captions.srt`. | Subtitle file loads seamlessly in video player. | URL decoding issues cause 404 on subtitle track loading. | **Low** | **P3** | Implement Base64-URL safe path encoding (`encodeIdClient`) across all API fetch requests for storage objects. | 2 Hours |
+| **BUG-05** | **UI / UX**<br>Missing Password Eye Toggles | Authentication forms (`/login`, `/register`, `/settings`) use standard `<Input type="password" />` fields without an eye icon toggle (`Lucide Eye`/`EyeOff`). | 1. Navigate to `/login` or `/register`.<br>2. Type complex password. | Ability to click eye icon to view typed password. | Users cannot inspect typed password, increasing typos. | **Low** | **P3** | Wrap password inputs in relative container with absolute right-aligned icon toggle button switching `type`. | 1 Hour |
