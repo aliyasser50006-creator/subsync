@@ -1,0 +1,191 @@
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+ ⨯ ./components/media-manager/media-manager-client.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4mD:\Program-Files\SubSync AI\components\media-manager\media-manager-client.tsx[0m:278:1]
+ [2m278[0m |   const hasActiveFilters = statusFilter !== 'all' || selectedCategoryId !== 'all' || selectedActorId !== 'all';
+ [2m279[0m | 
+ [2m280[0m |   return (
+ [2m281[0m |     <div className="flex flex-col min-h-[calc(100vh-8rem)] pb-24 max-w-7xl mx-auto w-full">
+     : [31;1m     ^^^[0m
+ [2m282[0m |       <MediaManagerHeader />
+ [2m283[0m | 
+ [2m284[0m |       <div className="mt-8">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/media-manager/media-manager-client.tsx
+[Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\2.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Program-Files\\SubSync AI\\.next\\cache\\webpack\\client-development\\2.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\2.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Program-Files\\SubSync AI\\.next\\cache\\webpack\\client-development\\2.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\2.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Program-Files\\SubSync AI\\.next\\cache\\webpack\\client-development\\2.pack.gz'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\2.pack.gz'
+[Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\4.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Program-Files\\SubSync AI\\.next\\cache\\webpack\\client-development\\4.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\4.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Program-Files\\SubSync AI\\.next\\cache\\webpack\\client-development\\4.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\4.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Program-Files\\SubSync AI\\.next\\cache\\webpack\\client-development\\4.pack.gz'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\4.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat 'D:\Program-Files\SubSync AI\.next\cache\webpack\client-development\5.pack.gz'
