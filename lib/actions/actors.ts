@@ -13,7 +13,7 @@ export async function getActors(
     const { data: { user }, error: userError } = await supabase.auth.getUser();
     if (userError || !user) return { error: 'Unauthorized' };
 
-    let query = supabase.from('actors').select('*', { count: 'exact' });
+    let query = supabase.from('actors').select('*', { count: 'exact' }).eq('user_id', user.id);
 
     if (search?.trim()) {
       query = query.ilike('name', `%${search.trim()}%`);
@@ -55,6 +55,7 @@ export async function getAllActors(): Promise<{ data?: Actor[]; error?: string }
     const { data, error } = await supabase
       .from('actors')
       .select('*')
+      .eq('user_id', user.id)
       .order('name', { ascending: true });
 
     if (error) return { error: error.message };
@@ -77,6 +78,7 @@ export async function getActorById(
       .from('actors')
       .select('*')
       .eq('id', id)
+      .eq('user_id', user.id)
       .single();
 
     if (actorError || !actor) return { error: actorError?.message || 'Actor not found' };
@@ -127,6 +129,7 @@ export async function createActor(
     const { data, error } = await supabase
       .from('actors')
       .insert({
+        user_id: user.id,
         name: name.trim(),
         image_url: image_url?.trim() || null,
         biography: biography?.trim() || null,
@@ -167,10 +170,12 @@ export async function updateActor(
         nationality: nationality?.trim() || null,
       })
       .eq('id', id)
+      .eq('user_id', user.id)
       .select()
-      .single();
+      .maybeSingle();
 
     if (error) return { error: error.message };
+    if (!data) return { error: 'Actor not found or unauthorized' };
     return { data: data as Actor };
   } catch (error) {
     console.error('Server action error:', error);
@@ -184,8 +189,16 @@ export async function deleteActor(id: string): Promise<{ error?: string }> {
     const { data: { user }, error: userError } = await supabase.auth.getUser();
     if (userError || !user) return { error: 'Unauthorized' };
 
-    const { error } = await supabase.from('actors').delete().eq('id', id);
+    const { data, error } = await supabase
+      .from('actors')
+      .delete()
+      .eq('id', id)
+      .eq('user_id', user.id)
+      .select('id')
+      .maybeSingle();
+      
     if (error) return { error: error.message };
+    if (!data) return { error: 'Actor not found or unauthorized' };
 
     return {};
   } catch (error) {
