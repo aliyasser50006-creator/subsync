@@ -13,7 +13,7 @@ export async function getCategories(
     const { data: { user }, error: userError } = await supabase.auth.getUser();
     if (userError || !user) return { error: 'Unauthorized' };
 
-    let query = supabase.from('categories').select('*', { count: 'exact' });
+    let query = supabase.from('categories').select('*', { count: 'exact' }).eq('user_id', user.id);
 
     if (search?.trim()) {
       query = query.ilike('name', `%${search.trim()}%`);
@@ -56,6 +56,7 @@ export async function getAllCategories(): Promise<{ data?: Category[]; error?: s
     const { data, error } = await supabase
       .from('categories')
       .select('*')
+      .eq('user_id', user.id)
       .order('name', { ascending: true });
 
     if (error) return { error: error.message };
@@ -78,6 +79,7 @@ export async function getCategoryById(
       .from('categories')
       .select('*')
       .eq('id', id)
+      .eq('user_id', user.id)
       .single();
 
     if (catError || !category) return { error: catError?.message || 'Category not found' };
@@ -126,7 +128,7 @@ export async function createCategory(
 
     const { data, error } = await supabase
       .from('categories')
-      .insert({ name: name.trim(), description: description?.trim() || null, color })
+      .insert({ user_id: user.id, name: name.trim(), description: description?.trim() || null, color })
       .select()
       .single();
 
@@ -157,13 +159,15 @@ export async function updateCategory(
       .from('categories')
       .update({ name: name.trim(), description: description?.trim() || null, color })
       .eq('id', id)
+      .eq('user_id', user.id)
       .select()
-      .single();
+      .maybeSingle();
 
     if (error) {
       if (error.code === '23505') return { error: 'A category with this name already exists.' };
       return { error: error.message };
     }
+    if (!data) return { error: 'Category not found or unauthorized' };
 
     return { data: data as Category };
   } catch (error) {
@@ -178,8 +182,16 @@ export async function deleteCategory(id: string): Promise<{ error?: string }> {
     const { data: { user }, error: userError } = await supabase.auth.getUser();
     if (userError || !user) return { error: 'Unauthorized' };
 
-    const { error } = await supabase.from('categories').delete().eq('id', id);
+    const { data, error } = await supabase
+      .from('categories')
+      .delete()
+      .eq('id', id)
+      .eq('user_id', user.id)
+      .select('id')
+      .maybeSingle();
+      
     if (error) return { error: error.message };
+    if (!data) return { error: 'Category not found or unauthorized' };
 
     return {};
   } catch (error) {
