@@ -26,6 +26,7 @@ export interface SubtitleSettings {
 
 export interface Category {
   id: string;
+  user_id: string;
   name: string;
   description: string | null;
   color: string;
@@ -34,6 +35,7 @@ export interface Category {
 
 export interface Actor {
   id: string;
+  user_id: string;
   name: string;
   image_url: string | null;
   biography: string | null;
