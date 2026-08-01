@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { createClient } from '@/lib/supabase/server';
 import { redirect, notFound } from 'next/navigation';
 import { getJobWithMetadata } from '@/lib/actions/metadata';
-import { getCategories } from '@/lib/actions/categories';
-import { getActors } from '@/lib/actions/actors';
+import { getAllCategories } from '@/lib/actions/categories';
+import { getAllActors } from '@/lib/actions/actors';
 import { MediaEditClient } from '@/components/media-manager/media-edit-client';
 
 export const metadata: Metadata = {
@@ -25,8 +25,8 @@ export default async function MediaEditPage({ params }: { params: Promise<{ id: 
 
   // Fetch categories and actors to populate form selects
   const [categoriesResult, actorsResult] = await Promise.all([
-    getCategories(),
-    getActors()
+    getAllCategories(),
+    getAllActors()
   ]);
 
   return (
