@@ -99,7 +99,7 @@ export function ActorSelector({ actors, selectedActorIds, onChange }: ActorSelec
                 {actors.map((actor) => (
                   <CommandItem
                     key={actor.id}
-                    value={actor.name}
+                    value={actor.name.toLowerCase()}
                     onSelect={() => toggleActor(actor.id)}
                     className="flex items-center gap-2 py-1.5"
                   >
