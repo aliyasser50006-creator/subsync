@@ -96,7 +96,7 @@ export function CategorySelector({ categories, selectedCategoryIds, onChange }: 
                 {categories.map((category) => (
                   <CommandItem
                     key={category.id}
-                    value={category.name}
+                    value={category.name.toLowerCase()}
                     onSelect={() => toggleCategory(category.id)}
                     className="flex items-center gap-2"
                   >
