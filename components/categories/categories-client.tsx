@@ -89,9 +89,19 @@ export function CategoriesClient() {
       </div>
 
       {loading ? (
-        <div className="surface-panel flex flex-col items-center justify-center p-16 text-muted-foreground">
-          <Loader2 className="h-7 w-7 animate-spin text-primary mb-3" />
-          <p className="text-sm font-semibold text-foreground">Loading categories...</p>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="surface-panel p-5 shadow-soft relative overflow-hidden flex flex-col h-[140px] animate-pulse">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-3 w-3 rounded-full bg-muted/60 shrink-0" />
+                <div className="h-5 w-32 bg-muted/60 rounded" />
+              </div>
+              <div className="space-y-1.5 mb-5 flex-grow">
+                <div className="h-4 w-full bg-muted/60 rounded" />
+                <div className="h-4 w-4/5 bg-muted/60 rounded" />
+              </div>
+            </div>
+          ))}
         </div>
       ) : categories.length === 0 ? (
         <div className="surface-panel py-16 px-6 text-center">
