@@ -165,6 +165,10 @@ const config: Config = {
           '50%': { opacity: '1' },
           '100%': { opacity: '0.5' },
         },
+        'shimmer-slide': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
         'pulse-glow': {
           '0%, 100%': { boxShadow: '0 0 0 0 hsl(var(--primary) / 0.3)' },
           '50%': { boxShadow: '0 0 0 8px hsl(var(--primary) / 0)' },
@@ -200,6 +204,7 @@ const config: Config = {
         'slide-up-in': 'slide-up-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both',
         'scale-in': 'scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) both',
         'shimmer': 'shimmer 2s ease-in-out infinite',
+        'shimmer-slide': 'shimmer-slide 1.8s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
         'gradient-shift': 'gradient-shift 8s ease infinite',
