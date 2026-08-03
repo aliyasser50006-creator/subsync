@@ -94,9 +94,15 @@ export function ActorsClient() {
       </div>
 
       {loading ? (
-        <div className="surface-panel flex flex-col items-center justify-center p-16 text-muted-foreground">
-          <Loader2 className="h-7 w-7 animate-spin text-primary mb-3" />
-          <p className="text-sm font-semibold text-foreground">Loading actors...</p>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div key={i} className="surface-panel flex flex-col items-center p-6 text-center shadow-soft relative overflow-hidden animate-pulse">
+              <div className="h-24 w-24 mb-4 rounded-full bg-muted/60" />
+              <div className="h-5 w-32 bg-muted/60 rounded mb-2" />
+              <div className="h-4 w-20 bg-muted/60 rounded" />
+              <div className="h-6 w-24 bg-muted/60 rounded-full mt-4" />
+            </div>
+          ))}
         </div>
       ) : actors.length === 0 ? (
         <div className="surface-panel py-16 px-6 text-center">
